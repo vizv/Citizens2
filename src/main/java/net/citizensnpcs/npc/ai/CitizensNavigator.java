@@ -306,8 +306,7 @@ public class CitizensNavigator implements Navigator, Runnable {
 
     private static class DoorOpener implements PathCallback {
         @Override
-        @SuppressWarnings("deprecation")
-        public void run(NPC npc, Block point, ListIterator<Block> path) {
+        public void run(NPC npc, Block point, double path) {
             if (npc.getStoredLocation().distance(point.getLocation()) < 2) {
                 boolean bottom = (point.getData() & 8) == 0;
                 Block set = bottom ? point : point.getRelative(BlockFace.DOWN);
